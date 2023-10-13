@@ -1,0 +1,472 @@
+---
+title: "Aplicação de Modelos de Aprendizagem Estatística e de Máquina em Finanças: Desenvolvimento de Soluções Reproduzíveis e Auditáveis"
+author:
+  - name: Prof. Washington S. da Silva 
+    affiliation: IFMG - Campus Formiga - Mestrado Profissional em Administração.
+    affiliation-url: https://www.formiga.ifmg.edu.br/mestrado
+lang: "pt"
+date: today
+bibliography: references.bib
+csl: associacao-brasileira-de-normas-tecnicas.csl
+crossref:
+  fig-title: '**Fig.**'
+  fig-labels: arabic
+  title-delim: "**.**"
+execute: 
+  warning: false
+format:
+  html:
+    embed-resources: true
+    toc: true
+    css: styles.css
+---
+
+## Resumo 
+
+
+Palavras-chave: 
+
+
+## Introdução
+
+Neste século XXI, os computadores estão envolvidos em muitas transações 
+econômicas e podem capturar dados associados a essas transações, que podem 
+então ser manipulados e analisados, incluindo grandes bancos de dados de texto.  
+As técnicas estatísticas e econométricas convencionais, como a regressão, 
+apresentam desempenho relativamente bom para o estudo de alguns fenômenos, 
+mas existem questões específicas dos grandes conjuntos de dados que podem 
+demandar ferramentas diferentes (@einav2014science).
+
+Primeiro, o tamanho dos bancos de dados atualmente disponíveis dados pode exigir 
+ferramentas de manipulação de dados mais poderosas. Em segundo lugar, podemos ter mais 
+preditores potenciais do que os apropriados para estimação, por isso, em geral é 
+necessário implementar alguma técnica de seleção de variáveis (@varian2014big).
+
+Terceiro, os grandes conjuntos de dados disponíveis podem permitir o ajuste de 
+relações mais flexíveis do que as implicadas pelos modelos lineares. Técnicas de 
+aprendizagem estatística, tais como árvores de decisão, máquinas de vetores de 
+suporte, redes neurais, aprendizado profundo entre outras, podem permitir 
+formas mais eficazes de modelar relações complexas (@mullainathan2017jep).
+
+Isto posto, a utilização de modelos de aprendizagem estatística (ou de máquina) 
+pode ajudar a melhorar a tomada de decisões em diversas subáreas das Finanças, 
+tais como: análise de crédito, gestão de risco, otimização de portfólios, 
+algorithmic trading e previsão de variáveis e conômico-financeiras, além de 
+aplicações em áreas correlatas (@athey2018impact). Além disso, a mineração 
+de textos pode ser aplicada para extrair informações valiosas dos grandes 
+volumes de dados textuais disponíveis, como relatórios financeiros e notícias 
+econômicas, uma área que, apesar do aumento das pesquisa, ainda é pouco 
+explorada na área de Finanças. 
+
+Neste contexto, este projeto de pesquisa tem como um dos objetivos explorar 
+e aplicar modelos de aprendizagem estatística, incluindo aprendizagem profunda 
+e reforço de aprendizagem, para abordar uma ampla gama de problemas na área de 
+Finanças e áreas correlatas. 
+
+No entanto, muitos profissionais da área de Finanças ainda não estão preparados 
+para aplicar esses modelos e técnicas. Isto posto, outro objetivo do projeto 
+é desenvolver materiais de aprendizagem (tutoriais) para capacitar os 
+mestrandos e graduandos em Administração e outros profissionais da área de 
+negócios nas metodologias e ferramentas computacionais necessárias para a 
+criação de relatórios e de outros produtos baseados em dados auditáveis e 
+reproduzíveis. 
+
+
+## Justicativa
+
+A justificativa para este projeto de pesquisa é baseada na crescente importância 
+da aplicação da aprendizagem estatística na tomada de decisões em outros aspectos 
+das Financas, áreas correlatas e nas ciências sociais aplicadas em geral. Os 
+modelos de aprendizagem estatística tem demonstrado sua eficácia na previsão, 
+otimização e gestão de riscos, bem como na identificação de oportunidades de 
+investimento em mercados altamente dinâmicos (@gogas2021machine). 
+
+No entanto, a aplicação desses modelos exige não apenas expertise nas 
+linguagens de programação e métodos de modelagam, mas também na implementação 
+de fluxos de trabalho robustos que garantam a reproducibilidade e auditabilidade 
+das análises, entretanto, sendo fácil constatar que muitos profissionais da 
+área de finanças ainda não estão preparados para aplicar esses modelos e técnicas.
+
+Este estudo é relevante não apenas para os mestrandos e graduandos em 
+Administração, mas também para a formação de pessoal qualificado para 
+a implementacão de abordagens inovadoras para resolver os desafios apresentados 
+neste início de Séc. XXI. Além disso, a ênfase na reproducibilidade e auditabilidade 
+cria capacaidades para que as descobertas e soluções propostas sejam confiáveis 
+e transparentes, promovendo a confiança nas decisões baseadas em dados.
+
+
+## Fundamentação Teórica
+
+Este referencial teórico é basendo em @elements2009 e @islr2
+
+#### O que é Aprendizagem Estatística?
+
+De forma geral, suponha que observamos uma resposta quantitativa $Y$ e $p$ 
+preditores diferentes, $X_1,X_2,\ldots,X_p$. Assumimos que existe alguma relação 
+entre $Y$ e $X = (X_1,X_2,\ldots,X_p)$, que pode ser escrita de forma muito geral 
+como:
+
+$$
+Y = f(X) + \varepsilon
+$$
+
+Aqui $f$ é alguma função fixa, mas desconhecida, de $X_1,\ldots,X_p$, e 
+$\varepsilon$ é um termo de erro aleatório, que é independente de $X$ e tem 
+média zero.
+
+Nesta formulação $f$ representa a informação sistemática que $X$ fornece 
+sobre $Y$. Em geral, a função $f$ pode envolver mais de uma variável de 
+entrada.
+
+Em essência, a aprendizagem estatística refere-se a um conjunto de abordagens 
+para estimar $f$. Nesta seção, descrevemos alguns dos principais conceitos 
+teóricos que surgem na estimativa de $f$, bem como ferramentas para avaliar 
+as estimativas obtidas.
+
+### Por que estimar $f$?
+
+Existem duas razões principais pelas quais podemos querer estimar $f$: 
+*previsão* e *inferência*.
+
+**Previsão**
+
+Em muitas situações, um conjunto de entradas $X$ está pdisponível, mas a saída $Y$ 
+não pode ser obtida facilmente. Nesta configuração, como a média do termo de erro 
+é zero, podemos prever $Y$ usando:
+
+$$
+\hat{Y} = \hat{f}(X),
+$$
+
+onde $\hat{f}$ representa a estimativa para $f$ e $\hat{Y}$ representa a previsão 
+resultante para $Y$ . Neste cenário, $\hat{f}$ é frequentemente tratado como uma 
+caixa preta, no sentido de que normalmente não se preocupa com a forma exata de $f$, 
+desde que produza previsões precisas para $Y$.
+
+A acurácia de $\hat{Y}$ como previsão para $Y$ depende de duas quantidades, que 
+chamaremos de erro redutível e erro irredutível. Em geral, $\hat{f}$ não será uma 
+estimativa perfeita para $f$, e esta imprecisão introduzirá algum erro. Este erro é 
+redutível porque podemos potencialmente melhorar a precisão de $\hat{f}$ usando a 
+técnica de aprendizagem estatística mais apropriada para estimar $f$. No entanto, 
+mesmo que fosse possível formar uma estimativa perfeita para $f$, de modo que a 
+resposta estimada assumisse a forma $\hat{Y} = f(X)$, a previsão ainda 
+teria algum erro! Isso ocorre porque $Y$ também é uma função de $\varepsilon$, que, 
+por definição, não pode ser previsto usando $X$. Portanto, a variabilidade associada 
+a $\varepsilon$ também afeta a precisão das previsões. Isso é conhecido como 
+*erro irredutível*, porque não importa quão bem estimamos $f$, não podemos reduzir o 
+erro introduzido por $\varepsilon$.
+
+Considere uma determinada estimativa $\hat{f}$ e um conjunto de preditores $X$, que 
+produz a previsão $\hat{Y} = \hat{f}(X)$. Suponha por um momento que $\hat{f}$ e 
+$X$ sejam fixos, de modo que a única variabilidade venha de $\varepsilon$. Então é 
+fácil mostrar que:
+
+$$
+\begin{align*}
+E(Y - \hat{Y})^2 &= E[f(X) + \varepsilon - \hat{f}(X)]^2, \\
+                 &= \underbrace{[f(X) - \hat{f}(X)]^{2}}_{\textit{Redutível}} + \underbrace{V(\varepsilon)}_{\textit{Irredutível}}
+\end{align*}
+$$
+
+sendo que $E(Y - \hat{Y})^2$ representa o valor esperado da diferença quadrática entre o 
+valor previsto e o atual de $Y$, e $V(\varepsilon)$ representa a variância do termo 
+do erro $\varepsilon$. O foco deste projeot está na aplicação de técnicas de 
+aprendizagem estatítsica em problemas de finanças para estimar $f$ com o objetivo de 
+minimizar o erro redutível.
+
+**Inferência**
+
+Muitas vezes estamos interessados em entender a associação entre $Y$ e $X_1, . . . ,X_p$. 
+Nesta situação desejamos estimar $f$, mas nosso objetivo não é necessariamente fazer 
+previsões para $Y$ . Agora $\hat{f}$ não pode ser tratado como uma caixa preta, 
+porque precisamos saber sua forma exata. Neste cenário, pode-se estar interessado em 
+responder às seguintes perguntas:
+
+• Quais preditores estão associados à resposta? Muitas vezes acontece que apenas uma 
+pequena fração dos preditores disponíveis está substancialmente associada a $Y$ . 
+Identificar os poucos preditores importantes entre um grande conjunto de variáveis 
+possíveis pode ser extremamente útil, dependendo da aplicação.
+
+• Qual é a relação entre a resposta e cada preditor? Alguns preditores podem ter um 
+relacionamento positivo com $Y$, no sentido de que valores maiores do preditor estão 
+associados a valores maiores de $Y$ . Outros preditores podem ter a relação oposta. 
+Dependendo da complexidade de $f$, a relação entre a resposta e um determinado preditor 
+também pode depender dos valores dos outros preditores.
+
+• A relação entre $Y$ e cada preditor pode ser resumida adequadamente usando uma equação 
+linear ou a relação é mais complicada? Historicamente, a maioria dos métodos para 
+estimar $f$ assumiu uma forma linear. Em algumas situações, tal suposição é razoável 
+ou mesmo desejável. Mas muitas vezes a verdadeira relação é mais complicada e, nesse 
+caso, um modelo linear pode não fornecer uma representação precisa da relação entre as 
+variáveis de entrada e de saída.
+
+Neste projeto, objetivamos tratar problemas que se enquadram na configuração de previsão, 
+na configuração de inferência ou em uma combinação de ambas. Dependendo se o  
+objetivo final é a previsão, a inferência ou uma combinação dos dois, diferentes métodos 
+para estimar $f$ podem ser apropriados. 
+
+Por exemplo, os modelos lineares permitem inferências previsíveis de modelos relativamente 
+simples e interlineares, mas podem não produzir previsões tão precisas quanto algumas outras abordagens. Em contraste, algumas das abordagens altamente não lineares que pretendemos 
+aplicar a problemas de Finan;cas podem potencialmente fornecer previsões bastante 
+precisas para $Y$, mas isto ocorre às custas de um modelo menos interpretável, para o 
+qual a inferência é mais desafiadora.
+
+### Como estimar $f$?
+
+Ao longo deste projeto, exploramos muitas abordagens lineares e não lineares para estimar f. No entanto, estes métodos geralmente partilham certas características. Fornecemos uma visão geral dessas características compartilhadas nesta seção. Sempre assumiremos que observamos um conjunto de $n$ pontos de dados diferentes, sendo que selecionamos uma fração dessas observações como sendo 
+dados de treinamento, porque usaremos essas observações para treinar, ou ensinar, nosso 
+método como estimar $f$.
+
+Considere que $x_{ij}$ representa o valor do j-ésimo preditor para observação $i$, sendo $i = 1, 2,\dots,n$ e $j = 1, 2,\ldots,p$. Da mesma forma, seja $y_i$ a variável resposta para a $i$-ésima observação. Assim, os dados de treinamento consistem em ${(x_1, y_1), (x_2, y_2),\ldots, (x_n, y_n)}$, sendo $x_i = (x_{i1}, x_{i2},\ldots,x_{ip})^{T}$.
+
+Conforme exposto anteriormente, um dos objetivos deste projeto é aplicar diversos métodos de aprendizagem estatística aos dados de treinamento para estimar a função desconhecida $f$. Em outras palavras, queremos encontrar uma função $\hat{f}$ tal que $Y \approx \hat{f}(X)$ para qualquer observação $(X, Y)$.
+
+Em termos gerais, a maioria dos métodos de aprendizagem estatística para esta tarefa podem ser caracterizados como paramétricos ou não paramétricos. Existem vantagens e desvantagens em 
+ambos os métodos de aprendizagem estatística. Exploraremos ambos os tipos de métodos no 
+desenvolvimento deste projeto. Discutiremos agora brevemente esses dois tipos de abordagens.
+
+**Métodos Paramétricos**
+
+Os métodos paramétricos envolvem uma abordagem baseada em duas etapas:
+
+1. Primeiro, fazemos uma suposição sobre a forma funcional, ou formato, de $f$. 
+Por exemplo, uma suposição muito simples é que $f$ é linear em X:
+
+$$
+f(X) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_p X_p.
+$$
+
+Este é um modelo linear. Uma vez que assumimos que $f$ é linear,
+o problema de estimar $f$ é bastante simplificado. Em vez de
+tendo que estimar uma função $p$-dimensional totalmente arbitrária $f(X)$, basta 
+estimar os coeficientes $p + 1$ $\beta_0, \beta_1,\ldots,\beta_p$.
+
+2. Após a seleção de um modelo, precisamos de um procedimento que use os dados de 
+treinamento para ajustar ou treinar o modelo. No caso do modelo linear, precisamos 
+estimar os parâmetros $\beta_0, \beta_1,\ldots,\beta_p$. Ou seja, queremos encontrar 
+valores desses parâmetros tais que:
+
+$$
+Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_p X_p.
+$$
+
+A abordagem mais comum para ajustar este modelo é referida como mínimos quadrados 
+(comuns). No entanto, os mínimos quadrados são uma das muitas maneiras possíveis 
+de ajustar o modelo linear.
+
+A abordagem baseada em modelo que acabamos de descrever é chamada de paramétrica; 
+reduz o problema de estimar $f$ a estimar um conjunto de parâmetros. Assumir uma 
+forma paramétrica para $f$ simplifica o problema de estimar $f$ porque geralmente 
+é muito mais fácil estimar um conjunto de parâmetros, como 
+$\beta_0, \beta_1,\ldots,\beta_p$ no modelo linear, do que isto é ajustar uma 
+função totalmente arbitrária $f$.
+
+A desvantagem potencial de uma abordagem paramétrica é que o modelo que escolhemos 
+geralmente não corresponderá à verdadeira forma desconhecida de $f$. Se o modelo 
+escolhido estiver muito longe do verdadeiro f, então nossa estimativa será ruim. 
+Podemos tentar resolver esse problema escolhendo modelos flexíveis que possam se 
+ajustar a muitas formas funcionais possíveis e flexíveis para $f$.
+
+Mas, em geral, ajustar um modelo mais flexível requer estimar um maior número de 
+parâmetros. Esses modelos mais complexos podem levar a um fenômeno conhecido como 
+overfitting dos dados, o que essencialmente significa que o overfitting segue os 
+erros ou ruídos muito de perto.
+
+**Métodos Não-Paramétricos**
+
+Os métodos não paramétricos não fazem suposições explícitas sobre a forma funcional 
+de $f$. Em vez disso, eles buscam uma estimativa de $f$ que chegue o mais próximo 
+possível dos pontos de dados, sem ser muito grosseira ou distorcida.
+
+Tais abordagens podem ter uma grande vantagem sobre as abordagens paramétricas: 
+ao evitar a suposição de uma forma funcional específica para $f$, elas têm o 
+potencial de ajustar com precisão uma gama mais ampla de formas possíveis para $f$. 
+Qualquer abordagem paramétrica traz consigo a possibilidade de que a forma funcional 
+usada para estimar $f$ seja muito diferente da verdadeira $f$, caso em que o modelo 
+resultante não se ajustará bem aos dados.
+
+Em contraste, as abordagens não paramétricas evitam completamente este perigo, uma 
+vez que essencialmente nenhuma suposição sobre a forma de $f$ é feita. Mas as 
+abordagens não paramétricas sofrem de uma grande desvantagem: uma vez que não reduzem 
+o problema de estimar $f$ a um pequeno número de parâmetros, um número muito grande de 
+observações (muito mais do que normalmente é necessário para uma abordagem paramétrica) 
+é necessário. necessário para obter uma estimativa precisa de $f$.
+
+### Aprendizagem Supervisionada versus Aprendizagem Não Supervisionada
+
+Most statistical learning problems fall into one of two categories: supervised
+supervised or unsupervised. The examples that we have discussed so far in 
+this chapter all fall into the supervised learning domain. For each observation 
+of the predictor measurement(s) $x_i$, $i = 1,\ldots,n$ there is an 
+associated response measurement $y_i$. 
+
+We wish to fit a model that relates the response to the predictors, with 
+the aim of accurately predicting the response for future
+observations (prediction) or better understanding the relationship between
+the response and the predictors (inference). Many classical statistical learning
+methods such as linear regression and logistic regression as well as more modern 
+approaches such as Generalized Additive Models (GAMM), Boosting, and Support 
+Vector Machines (SVM), operate  in the supervised learning domain. The vast 
+majority of this book is devoted to this setting.
+
+By contrast, unsupervised learning describes the somewhat more challenging
+situation in which for every observation $i$ = $1,\ldots,n$, we observe
+a vector of measurements $x_i$ but no associated response $y_i$. It is 
+not possible to fit a linear regression model, since there is no response 
+variable to predict. In this setting, we are in some sense working blind; 
+the situation is referred to as unsupervised because we lack a response 
+variable that can supervise our analysis. What sort of statistical analysis 
+is possible?We can seek to understand the relationships between the variables
+or between the observations. 
+
+One statistical learning tool that we may use in this setting is cluster analysis, 
+or clustering. The goal of cluster analysis is to ascertain, on the basis 
+of $x1,\ldots,xn$, whether the observations fall into analysis
+relatively distinct groups. For example, in a market segmentation study we
+might observe multiple characteristics (variables) for potential customers,
+such as zip code, family income, and shopping habits. We might believe
+that the customers fall into different groups, such as big spenders versus
+low spenders. If the information about each customer’s spending patterns
+were available, then a supervised analysis would be possible. 
+
+However, this information is not available, that is, we do not know 
+whether each potential customer is a big spender or not. In this setting, 
+we can try to cluster the customers on the basis of the variables 
+measured, in order to identify distinct groups of potential customers. 
+Identifying such groups can be of interest because it might be that 
+the groups differ with respect to some property of interest, such as 
+spending habits.
+
+#### Avaliando a Acurácia de Modelos
+
+Nesta seção, discutimos alguns dos conceitos mais importantes que surgem 
+na seleção de um procedimento de aprendizagem estatística para um conjunto 
+de dados específico.
+
+#### Medindo a Qualidade do Ajuste
+
+Para avaliar o desempenho de um método de aprendizagem estatística em um 
+determinado conjunto de dados, precisamos de alguma forma de medir até que 
+ponto suas previsões realmente correspondem aos dados observados. Ou seja, 
+precisamos quantificar até que ponto o valor da resposta prevista para uma 
+determinada observação está próximo do valor verdadeiro da resposta para 
+essa observação. No cenário de regressão, a medida mais comumente usada é 
+o *Mean Squared Error* (MSE), dado por:
+
+$$
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{f}(x_i))^2
+$$
+
+sendo $\hat{f}(x_i)$ a previsão que $\hat{f}$ fornece para a $i$-ésima observação. 
+O MSE será pequeno se as respostas previstas estiverem muito próximas das 
+respostas verdadeiras, e será grande se, para algumas das observações, as 
+respostas previstas e verdadeiras diferirem substancialmente.
+
+O MSE é calculado usando os dados de treinamento que foram usados para
+se ajusta ao modelo e, portanto, deve ser chamado com mais precisão de
+treinamento MSE. Mas, em geral, não nos importamos realmente quão bem o
+método funciona treinando nos dados de treinamento. Em vez disso, estamos 
+interessados na precisão das previsões que obtemos quando aplicamos o nosso 
+método a dados de teste nunca antes vistos. Por que é com isso que nos 
+importamos? Suponha que estejamos interessados em desenvolver um algoritmo 
+para prever o preço de uma ação com base nos retornos anteriores de ações. 
+Podemos treinar o método usando retornos de ações dos últimos 6 meses. Mas 
+realmente não nos importamos com o quão bem nosso método prevê o preço das 
+ações da semana passada. Em vez disso, nos preocupamos com o quão bem ele irá 
+prever o preço de amanhã ou o preço do próximo mês.
+
+Para afirmar isso de forma mais matemática, suponha que ajustamos nosso 
+método de aprendizagem estatística em nossas observações de treinamento 
+${(x_1, y_1), (x_2, y_2),\ldots,(x_n, y_n)}$, e obtemos a estimativa 
+$\hat{f}$. Podemos então calcular $\hat{f}(x_1), \hat{f}(x_2),\ldots, \hat{f}(x_n)$.
+
+Se estes forem aproximadamente iguais a $y1, y2,\ldots, yn$, então o MSE 
+de treinamento é pequeno. No entanto, não estamos realmente interessados 
+em saber se $\hat{f}(x_i) \approx y_i$; em vez disso, queremos saber se 
+$\hat{f}(x0)$ é aproximadamente igual a $y_0$, onde $(x_0, y_0)$ é uma 
+observação de teste nunca antes vista e não usada para treinar o método de 
+aprendizagem estatística. Queremos escolher o método que fornece o menor MSE 
+de teste, em oposição para o MSE de treinamento mais baixo. Em outras palavras, 
+se tivéssemos um grande número de observações de teste, poderíamos calcular:
+
+$$
+Média(y_0 - \hat{f}(x_0))^2
+$$
+
+o erro quadrático médio de previsão para essas observações de teste $(x_0, y_0)$. 
+Gostaríamos de selecionar o modelo para o qual essa quantidade seja a menor possível.
+
+Como podemos tentar selecionar um método que minimize o MSE de teste? Em alguns 
+situações, podemos ter um conjunto de dados de teste disponível – ou seja, podemos 
+ter acesso a um conjunto de observações que não foram usadas para treinar o método 
+de aprendizagem estatística. Podemos então simplesmente avaliar as observações do 
+teste e selecionar o método de aprendizagem para o qual o MSE do teste é menor.
+
+Na prática, geralmente é possível calcular o MSE de treinamento com relativa 
+facilidade, mas estimar o MSE de teste é consideravelmente mais difícil porque 
+normalmente não há dados de teste disponíveis. O nível de flexibilidade correspondente 
+ao modelo com o MSE de teste mínimo pode variar consideravelmente entre os 
+conjuntos de dados. Ao longo deste projeto, discutimos uma variedade de abordagens 
+que podem ser usadas na prática para estimar esse ponto mínimo. Um método 
+importante é a validação cruzada, que é um método para estimar o MSE do teste 
+usando os dados de treinamento.
+
+
+## Objetivo Geral
+
+Este projeto aborda três objetivos específicos. Primeiramente, visa aplicar modelos de 
+aprendizagem estatística e de máquina em Finanças, abrangendo áreas como análise de crédito, 
+gestão de risco, otimização de portfólios, algorithmic trading e previsão de variáveis econômico-financeiras. Em segundo lugar, busca identificar aplicações da mineração de textos 
+em Finanças e áreas afins, explorando insights valiosos de documentos financeiros não 
+estruturados. Por fim, o projeto se propõe a desenvolver materiais de aprendizagem para 
+alunos de mestrado e graduação, preparando-os para aplicar modelos de aprendizagem 
+estatística e de máquina em contextos de Finanças corporativas, auditoria e contabilidade.
+
+
+## Metodologia
+
+Para alcançar o objetivo geral, este projeto de pesquisa seguirá a seguinte metodologia:
+
+1. Revisão Sistemática da literatura 1: Realizar uma revisão sistemática da literatura 
+sobre a aplicação de modelos de aprendizagem estatística na área de 
+finanças e em áreas correlatas para identificar oportunidades de pesquisas inovadoras. 
+
+2. Revisão Sistemática da literatura 2: será realizada uma revisão sistemática da l
+iteratura referente à aplicação de metodologias adequadas para a elaboração de 
+relatórios, artigos e produtos baseados em dados auditáveis e reproduzíveis na 
+área de Finanças e áreas correlatas.
+
+3. Identificação de problemas: A partir das revisões sistemáticas, serão identificados 
+problemas e oportunidades de pesquisa inovadoras em Finanças e em áreas correlatas
+que possam ser resolvidos com a aplicação de modelos de aprendizagem estatística e/ou 
+pela adoção de metodologias computacionais para a elaboração de relatórios, artigos e 
+produtos baseados em dados auditáveis e reproduzíveis.
+
+4. Desenvolvimento de materiais de aprendizagem: Desenvolver materiais de aprendizagem, 
+tais comom tutoriais interativos e workshops para capacitar os estudantes: 
+
+    4.1 na aplicação de modelos de aprendizagem estatística em problemas da área de 
+        finanças e de áreas  correlatas;
+
+    4.2 para a adoção de métodos e técnicas para a elaboração de relatórios, artigos e 
+        produtos baseados em dados auditáveis e reproduzíveis;
+
+    4.3 os materiais envolverão recursos de aprendizagem das linguagens R, Python, 
+        controle de versão com git e GitHub, o sistema de publicação Quarto, entre outros 
+        recursos.
+
+## Acompanhamento e Avaliação 
+
+- Avaliar a eficácia dos materiais de aprendizagem desenvolvidos através da aplicação 
+em problemas reais e da retroalimentação dos alunos.
+
+
+## Resultados Esperados
+
+
+## Referências
+
+::: {#refs}
+:::
+
+
