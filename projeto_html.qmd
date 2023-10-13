@@ -23,10 +23,24 @@ format:
 
 ## Resumo 
 
+Este projeto objetiva identificar problemas e aplicar modelos de 
+aprendizagem estatística, incluindo aprendizagem profunda e 
+reforço de aprendizagem, a problemas da área e de subáreas das 
+Finanças e de áreas correlatas, com a finalidade de produção de 
+artigos científicos. Além disso, outro objetivo pretende 
+desenvolver materiais de aprendizagem (tutoriais) para capacitar 
+os mestrandos e estudantes do bacharelado em Administrção em 
+metodologias e recursos computacionais necessários para a 
+produção de pesquisas, relatórios e outros produtos baseados em 
+dados auditáveis e reproduzíveis, envolvendo as linguagens R, 
+Python, o sistema de controle de versão Git e o GitHub, o sistema 
+de publicação Quarto, entre outros. 
 
-Palavras-chave: 
 
+**Palavras-chave**: aprendizagem estatística, aprendizagem de máquina, 
+big data, computação científica, controle de versão, reproducibilidade. 
 
+ 
 ## Introdução
 
 Neste século XXI, os computadores estão envolvidos em muitas transações 
@@ -49,27 +63,28 @@ suporte, redes neurais, aprendizado profundo entre outras, podem permitir
 formas mais eficazes de modelar relações complexas (@mullainathan2017jep).
 
 Isto posto, a utilização de modelos de aprendizagem estatística (ou de máquina) 
-pode ajudar a melhorar a tomada de decisões em diversas subáreas das Finanças, 
+pode ajudar a melhorar a tomada de decisões em subáreas das Finanças, 
 tais como: análise de crédito, gestão de risco, otimização de portfólios, 
-algorithmic trading e previsão de variáveis e conômico-financeiras, além de 
-aplicações em áreas correlatas (@athey2018impact). Além disso, a mineração 
-de textos pode ser aplicada para extrair informações valiosas dos grandes 
-volumes de dados textuais disponíveis, como relatórios financeiros e notícias 
-econômicas, uma área que, apesar do aumento das pesquisa, ainda é pouco 
-explorada na área de Finanças. 
+algorithmic trading e previsão de variáveis econômico-financeiras. 
+Destaque-se que serão também exploradas aplicações em áreas correlatas 
+(@athey2018impact). Importante destacar ainda que, dado o substancial 
+volumes de dados textuais disponíveis, avalia-se no âmbito deste projeto, que 
+a mineração de textos pode ser aplicada para extrair informações valiosas dos 
+dados textuais disponíveis, uma área relativamente ainda pouco explorada 
+na área de Finanças e nas áreas correlatas. 
 
 Neste contexto, este projeto de pesquisa tem como um dos objetivos explorar 
 e aplicar modelos de aprendizagem estatística, incluindo aprendizagem profunda 
 e reforço de aprendizagem, para abordar uma ampla gama de problemas na área de 
-Finanças e áreas correlatas. 
+Finanças e áreas afins. 
 
 No entanto, muitos profissionais da área de Finanças ainda não estão preparados 
 para aplicar esses modelos e técnicas. Isto posto, outro objetivo do projeto 
-é desenvolver materiais de aprendizagem (tutoriais) para capacitar os 
-mestrandos e graduandos em Administração e outros profissionais da área de 
-negócios nas metodologias e ferramentas computacionais necessárias para a 
-criação de relatórios e de outros produtos baseados em dados auditáveis e 
-reproduzíveis. 
+é desenvolver diferentes tipos de materiais de aprendizagem 
+para capacitar os mestrandos e graduandos em Administração e outros 
+profissionais da área de negócios nas metodologias e ferramentas computacionais 
+necessárias para a criação de relatórios e de outros produtos baseados em dados 
+auditáveis e reproduzíveis. 
 
 
 ## Justicativa
@@ -81,25 +96,42 @@ modelos de aprendizagem estatística tem demonstrado sua eficácia na previsão,
 otimização e gestão de riscos, bem como na identificação de oportunidades de 
 investimento em mercados altamente dinâmicos (@gogas2021machine). 
 
-No entanto, a aplicação desses modelos exige não apenas expertise nas 
-linguagens de programação e métodos de modelagam, mas também na implementação 
-de fluxos de trabalho robustos que garantam a reproducibilidade e auditabilidade 
-das análises, entretanto, sendo fácil constatar que muitos profissionais da 
-área de finanças ainda não estão preparados para aplicar esses modelos e técnicas.
+A estatística e a econometria modernas e os modelos de 
+aprendizagem estatística, são fundamentalmente disciplinas computacionais, mas 
+é fácil constatar que este fato não se reflete na formação dos profissionais das 
+ciências sociais aplicadas. Com a ascensão do *big data* e da ciência de dados, 
+tornou-se cada vez mais claro que para formarmos pesquisadores e profissionais 
+preparados para os desafios atuais, é necessária um formação explícita em 
+técnicas e ferramentas computacionais. Além disso, as diretrizes curriculares 
+recentes afirmam claramente que trabalhar com dados requer extensas habilidades 
+de computação e que os profissionais de admnistração, e certamente de todas as 
+demais áreas, devem ser fluentes no acesso, manipulação, análise e modelagem 
+com softwares profissionais de análise estatística.
 
-Este estudo é relevante não apenas para os mestrandos e graduandos em 
-Administração, mas também para a formação de pessoal qualificado para 
-a implementacão de abordagens inovadoras para resolver os desafios apresentados 
-neste início de Séc. XXI. Além disso, a ênfase na reproducibilidade e auditabilidade 
-cria capacaidades para que as descobertas e soluções propostas sejam confiáveis 
-e transparentes, promovendo a confiança nas decisões baseadas em dados.
+Enfatizando, a aplicação de modelos de aprendizagem estatística exige não 
+apenas expertise no entendimento dos modelos, mas também na implementação 
+de fluxos de trabalho robustos que garantam a reproducibilidade e auditabilidade 
+das análises, entretanto, é fácil constatar que muitos profissionais da 
+área de finanças ainda não são formados nestas técnicas e métodos 
+(@mine2018infrastructure).
+
+Isto posto, este projeto é relevante não apenas para a evolução dos 
+procedimentos de modelagem de dados em Finanças e áreas correlatas, 
+mas também para a formação de pessoal qualificado para a implementacão 
+de abordagens inovadoras para resolver os desafios apresentados neste 
+início de Séc. XXI. A ênfase na aplicação de procedimentos 
+e métodos computcionais compatíveis com a reproducibilidade e auditabilidade 
+dos produtos resultantes de projetos profissionais e de pesquisa pretende 
+criar capacidades para que as descobertas e soluções propostas 
+sejam confiáveis e transparentes, promovendo a confiança nas decisões 
+baseadas na modelagem avançada de dados.
 
 
 ## Fundamentação Teórica
 
 Este referencial teórico é basendo em @elements2009 e @islr2
 
-#### O que é Aprendizagem Estatística?
+### O que é Aprendizagem Estatística?
 
 De forma geral, suponha que observamos uma resposta quantitativa $Y$ e $p$ 
 preditores diferentes, $X_1,X_2,\ldots,X_p$. Assumimos que existe alguma relação 
@@ -112,18 +144,16 @@ $$
 
 Aqui $f$ é alguma função fixa, mas desconhecida, de $X_1,\ldots,X_p$, e 
 $\varepsilon$ é um termo de erro aleatório, que é independente de $X$ e tem 
-média zero.
-
-Nesta formulação $f$ representa a informação sistemática que $X$ fornece 
-sobre $Y$. Em geral, a função $f$ pode envolver mais de uma variável de 
-entrada.
+média zero.Nesta formulação $f$ representa a informação sistemática que 
+$X$ fornece sobre $Y$. Em geral, a função $f$ pode envolver mais de uma 
+variável de entrada.
 
 Em essência, a aprendizagem estatística refere-se a um conjunto de abordagens 
 para estimar $f$. Nesta seção, descrevemos alguns dos principais conceitos 
 teóricos que surgem na estimativa de $f$, bem como ferramentas para avaliar 
 as estimativas obtidas.
 
-### Por que estimar $f$?
+#### Por que estimar $f$?
 
 Existem duas razões principais pelas quais podemos querer estimar $f$: 
 *previsão* e *inferência*.
@@ -206,22 +236,33 @@ objetivo final é a previsão, a inferência ou uma combinação dos dois, difer
 para estimar $f$ podem ser apropriados. 
 
 Por exemplo, os modelos lineares permitem inferências previsíveis de modelos relativamente 
-simples e interlineares, mas podem não produzir previsões tão precisas quanto algumas outras abordagens. Em contraste, algumas das abordagens altamente não lineares que pretendemos 
+simples e interlineares, mas podem não produzir previsões tão precisas quanto algumas outras 
+abordagens. Em contraste, algumas das abordagens altamente não lineares que pretendemos 
 aplicar a problemas de Finan;cas podem potencialmente fornecer previsões bastante 
 precisas para $Y$, mas isto ocorre às custas de um modelo menos interpretável, para o 
 qual a inferência é mais desafiadora.
 
-### Como estimar $f$?
+#### Como estimar $f$?
 
-Ao longo deste projeto, exploramos muitas abordagens lineares e não lineares para estimar f. No entanto, estes métodos geralmente partilham certas características. Fornecemos uma visão geral dessas características compartilhadas nesta seção. Sempre assumiremos que observamos um conjunto de $n$ pontos de dados diferentes, sendo que selecionamos uma fração dessas observações como sendo 
-dados de treinamento, porque usaremos essas observações para treinar, ou ensinar, nosso 
-método como estimar $f$.
+Ao longo deste projeto, exploramos muitas abordagens lineares e não lineares para estimar f. 
+No entanto, estes métodos geralmente partilham certas características. Fornecemos uma visão 
+geral dessas características compartilhadas nesta seção. Sempre assumiremos que observamos 
+um conjunto de $n$ pontos de dados diferentes, sendo que selecionamos uma fração dessas 
+observações como sendo dados de treinamento, porque usaremos essas observações para treinar, 
+ou ensinar, nosso método como estimar $f$.
 
-Considere que $x_{ij}$ representa o valor do j-ésimo preditor para observação $i$, sendo $i = 1, 2,\dots,n$ e $j = 1, 2,\ldots,p$. Da mesma forma, seja $y_i$ a variável resposta para a $i$-ésima observação. Assim, os dados de treinamento consistem em ${(x_1, y_1), (x_2, y_2),\ldots, (x_n, y_n)}$, sendo $x_i = (x_{i1}, x_{i2},\ldots,x_{ip})^{T}$.
+Considere que $x_{ij}$ representa o valor do j-ésimo preditor para observação $i$, sendo 
+$i = 1, 2,\dots,n$ e $j = 1, 2,\ldots,p$. Da mesma forma, seja $y_i$ a variável resposta 
+para a $i$-ésima observação. Assim, os dados de treinamento consistem em 
+${(x_1, y_1), (x_2, y_2),\ldots, (x_n, y_n)}$, sendo $x_i = (x_{i1}, x_{i2},\ldots,x_{ip})^{T}$.
 
-Conforme exposto anteriormente, um dos objetivos deste projeto é aplicar diversos métodos de aprendizagem estatística aos dados de treinamento para estimar a função desconhecida $f$. Em outras palavras, queremos encontrar uma função $\hat{f}$ tal que $Y \approx \hat{f}(X)$ para qualquer observação $(X, Y)$.
+Conforme exposto anteriormente, um dos objetivos deste projeto é aplicar diversos métodos 
+de aprendizagem estatística aos dados de treinamento para estimar a função desconhecida $f$. 
+Em outras palavras, queremos encontrar uma função $\hat{f}$ tal que $Y \approx \hat{f}(X)$ 
+para qualquer observação $(X, Y)$.
 
-Em termos gerais, a maioria dos métodos de aprendizagem estatística para esta tarefa podem ser caracterizados como paramétricos ou não paramétricos. Existem vantagens e desvantagens em 
+Em termos gerais, a maioria dos métodos de aprendizagem estatística para esta tarefa podem 
+ser caracterizados como paramétricos ou não paramétricos. Existem vantagens e desvantagens em 
 ambos os métodos de aprendizagem estatística. Exploraremos ambos os tipos de métodos no 
 desenvolvimento deste projeto. Discutiremos agora brevemente esses dois tipos de abordagens.
 
@@ -294,53 +335,53 @@ observações (muito mais do que normalmente é necessário para uma abordagem p
 
 ### Aprendizagem Supervisionada versus Aprendizagem Não Supervisionada
 
-Most statistical learning problems fall into one of two categories: supervised
-supervised or unsupervised. The examples that we have discussed so far in 
-this chapter all fall into the supervised learning domain. For each observation 
-of the predictor measurement(s) $x_i$, $i = 1,\ldots,n$ there is an 
-associated response measurement $y_i$. 
+A maioria dos problemas de aprendizagem estatística se enquadra em uma de duas 
+categorias: supervisionado ou não supervisionado. Sem dúvida, a maioria das 
+aplicações a serem exploradas neste projeto se enquadram no domínio da aprendizagem 
+supervisionada. Para cada observação da(s) medida(s) preditora(s) 
+$x_i$, $i = 1,\ldots,n$ há uma medida da variável resposta associada $y_i$.
 
-We wish to fit a model that relates the response to the predictors, with 
-the aim of accurately predicting the response for future
-observations (prediction) or better understanding the relationship between
-the response and the predictors (inference). Many classical statistical learning
-methods such as linear regression and logistic regression as well as more modern 
-approaches such as Generalized Additive Models (GAMM), Boosting, and Support 
-Vector Machines (SVM), operate  in the supervised learning domain. The vast 
-majority of this book is devoted to this setting.
+Desejamos ajustar um modelo que relacione a resposta aos preditores, com o 
+objetivo de prever com precisão a resposta para futuras observações ou 
+compreender melhor a relação entre a resposta e os preditores (inferência). 
+Muitos modelos de aprendizagem estatísticos clássicos, tais como como regressão 
+linear e regressão logística, bem como métodos mais modernos como Modelos Aditivos 
+Generalizados (GAMM), Árvores de Decisão, Boosting e Suporte Vector Machines 
+(SVM), operam no domínio da aprendizagem supervisionada.
 
-By contrast, unsupervised learning describes the somewhat more challenging
-situation in which for every observation $i$ = $1,\ldots,n$, we observe
-a vector of measurements $x_i$ but no associated response $y_i$. It is 
-not possible to fit a linear regression model, since there is no response 
-variable to predict. In this setting, we are in some sense working blind; 
-the situation is referred to as unsupervised because we lack a response 
-variable that can supervise our analysis. What sort of statistical analysis 
-is possible?We can seek to understand the relationships between the variables
-or between the observations. 
+Por outro lado, a aprendizagem não supervisionada descreve o desafio um pouco 
+mais desafiador em que para cada observação $i$ = $1,\ldots,n$, observamos
+um vetor de medições $x_i$ mas nenhuma resposta associada $y_i$. Assim,
+não é possível ajustar um modelo de regressão, pois não há variável resposta
+a ser prevista. Neste cenário, estamos, de certa forma, trabalhando 
+às cegas; a situação é referida como não supervisionada porque não temos variável 
+resposta que pode supervisionar nossa análise. Que tipo de análise estatística
+é possível nestes casos? Podemos buscar entender as relações entre as variáveis
+ou entre as observações.
 
-One statistical learning tool that we may use in this setting is cluster analysis, 
-or clustering. The goal of cluster analysis is to ascertain, on the basis 
-of $x1,\ldots,xn$, whether the observations fall into analysis
-relatively distinct groups. For example, in a market segmentation study we
-might observe multiple characteristics (variables) for potential customers,
-such as zip code, family income, and shopping habits. We might believe
-that the customers fall into different groups, such as big spenders versus
-low spenders. If the information about each customer’s spending patterns
-were available, then a supervised analysis would be possible. 
+Uma ferramenta de aprendizagem estatística que podemos usar neste cenário é a 
+análise de agrupamentos. O objetivo da análise de agrupamentos é verificar, 
+com base em $x1,\ldots,xn$, se as observações podem ser alocadas em grupos 
+relativamente distintos. Por exemplo, num estudo de segmentação de mercado,
+podemos observar múltiplas características (variáveis) para clientes potenciais,
+como CEP, renda familiar e hábitos de compra. Podemos acreditar
+que os clientes se enquadram em grupos diferentes, como grandes compradores versus
+pequenos compradores, em termos do volume dispendido. Se as informações 
+sobre os padrões de gastos de cada cliente estivessem disponíveis, então 
+uma análise supervisionada seria possível.
 
-However, this information is not available, that is, we do not know 
-whether each potential customer is a big spender or not. In this setting, 
-we can try to cluster the customers on the basis of the variables 
-measured, in order to identify distinct groups of potential customers. 
-Identifying such groups can be of interest because it might be that 
-the groups differ with respect to some property of interest, such as 
-spending habits.
+Contudo, esta informação não está disponível, ou seja, não sabemos
+se cada cliente potencial gasta muito ou não. Nesta configuração,
+podemos tentar agrupar os clientes com base nas variáveis
+mensuradas, a fim de identificar grupos distintos de clientes potenciais.
+Identificar esses grupos pode ser interessante porque pode ser que
+os grupos diferem em relação a alguma propriedade de interesse, como
+hábitos de consumo, por exemplo.
 
 #### Avaliando a Acurácia de Modelos
 
 Nesta seção, discutimos alguns dos conceitos mais importantes que surgem 
-na seleção de um procedimento de aprendizagem estatística para um conjunto 
+na seleção de um modelo de aprendizagem estatística para um conjunto 
 de dados específico.
 
 #### Medindo a Qualidade do Ajuste
@@ -408,65 +449,99 @@ normalmente não há dados de teste disponíveis. O nível de flexibilidade corr
 ao modelo com o MSE de teste mínimo pode variar consideravelmente entre os 
 conjuntos de dados. Ao longo deste projeto, discutimos uma variedade de abordagens 
 que podem ser usadas na prática para estimar esse ponto mínimo. Um método 
-importante é a validação cruzada, que é um método para estimar o MSE do teste 
+importante é a validação-cruzada, que é um método para estimar o MSE do teste 
 usando os dados de treinamento.
 
 
 ## Objetivo Geral
 
-Este projeto aborda três objetivos específicos. Primeiramente, visa aplicar modelos de 
-aprendizagem estatística e de máquina em Finanças, abrangendo áreas como análise de crédito, 
-gestão de risco, otimização de portfólios, algorithmic trading e previsão de variáveis econômico-financeiras. Em segundo lugar, busca identificar aplicações da mineração de textos 
-em Finanças e áreas afins, explorando insights valiosos de documentos financeiros não 
-estruturados. Por fim, o projeto se propõe a desenvolver materiais de aprendizagem para 
-alunos de mestrado e graduação, preparando-os para aplicar modelos de aprendizagem 
-estatística e de máquina em contextos de Finanças corporativas, auditoria e contabilidade.
+Este projeto envolve dois objetivos. Primeiramente, visa identificar 
+problemas atuais na área de Finanças e áreas correlatas que possam 
+ser tratados pela aplicação de modelos de aprendizagem estatística, 
+abrangendo áreas como análise de crédito, gestão de risco, otimização 
+de portfólios, algorithmic trading e previsão de variáveis econômico-financeiras, 
+além de envolver a exploração de aplicações em grandes áreas correlatas, 
+tais como auditoria, contabilidade. 
+
+Em segundo lugar, o projeto se propõe a desenvolver materiais de aprendizagem para 
+alunos do Mestrado Profissional em Admnistração e do bachareladp para 
+capacitá-los para a adoção de métodos e recursos computacionais que 
+possibilitem o desenvolvimento de produtos e soluções reproduzíveis e 
+auditáveis (@vilhuber2023reinforcing, @Hoynes2023Reproducibility), o que 
+envolverá a a capacitação em linguagens de programação (@r4ds2023, @islpy), 
+sistemas de controle de versão (@bryan2018excuse) e recursos para a manipulação 
+de grandes arquivos de dados (@r4ds2023).
 
 
 ## Metodologia
 
-Para alcançar o objetivo geral, este projeto de pesquisa seguirá a seguinte metodologia:
+Para alcançar os objetivos propostos, os seguintes procedimentos serão 
+executados:
 
-1. Revisão Sistemática da literatura 1: Realizar uma revisão sistemática da literatura 
-sobre a aplicação de modelos de aprendizagem estatística na área de 
+1. Revisão Sistemática da literatura - Parte 1: Realizar uma revisão sistemática 
+da literatura sobre a aplicação de modelos de aprendizagem estatística na área de 
 finanças e em áreas correlatas para identificar oportunidades de pesquisas inovadoras. 
 
-2. Revisão Sistemática da literatura 2: será realizada uma revisão sistemática da l
-iteratura referente à aplicação de metodologias adequadas para a elaboração de 
-relatórios, artigos e produtos baseados em dados auditáveis e reproduzíveis na 
-área de Finanças e áreas correlatas.
+2. Revisão Sistemática da literatura  - Parte 2: será realizada uma revisão 
+sistemática da literatura referente à aplicação de metodologias adequadas 
+para a elaboração de relatórios, artigos e produtos baseados em dados 
+auditáveis e reproduzíveis na área de Finanças e áreas correlatas.
 
 3. Identificação de problemas: A partir das revisões sistemáticas, serão identificados 
-problemas e oportunidades de pesquisa inovadoras em Finanças e em áreas correlatas
-que possam ser resolvidos com a aplicação de modelos de aprendizagem estatística e/ou 
-pela adoção de metodologias computacionais para a elaboração de relatórios, artigos e 
-produtos baseados em dados auditáveis e reproduzíveis.
+problemas e oportunidades de pesquisa e de desenvolvimento de soluções técnicas 
+em Finanças e em áreas correlatas que possam ser tratadas pela aplicação de 
+modelos de aprendizagem estatística e/ou pela adoção de metodologias computacionais 
+para a elaboração de relatórios, artigos e produtos baseados em dados auditáveis e 
+reproduzíveis.
 
-4. Desenvolvimento de materiais de aprendizagem: Desenvolver materiais de aprendizagem, 
-tais comom tutoriais interativos e workshops para capacitar os estudantes: 
+4. Elaboração e submissão de pelo menos dois artigos científicos a revistas 
+indexadas.
+
+5. Desenvolvimento de materiais de aprendizagem: serão desenvolvidos materiais de 
+aprendizagem, tais como tutoriais para capacitar os estudantes do 
+Mestrado profissional em Administração e, se houver demanda, estudantes do 
+Bacharelado em Administração: 
 
     4.1 na aplicação de modelos de aprendizagem estatística em problemas da área de 
-        finanças e de áreas  correlatas;
+        Finanças e de áreas  correlatas;
 
     4.2 para a adoção de métodos e técnicas para a elaboração de relatórios, artigos e 
         produtos baseados em dados auditáveis e reproduzíveis;
 
-    4.3 os materiais envolverão recursos de aprendizagem das linguagens R, Python, 
-        controle de versão com git e GitHub, o sistema de publicação Quarto, entre outros 
-        recursos.
+    4.3 os materiais versarão sbore linguagens de programação (R, Python), 
+        controle de versão com git e GitHub, o sistema de publicação Quarto, 
+        entre outros recursos e procedimentos computacionais.
+
+6. Todos os procedimentos anteriores serão realizados, preferencialmente, 
+pela orientação e co-orientação de orientados do mestrado profissional em 
+Administração com a participação de estudantes do bacharelado em Administração.
 
 ## Acompanhamento e Avaliação 
 
-- Avaliar a eficácia dos materiais de aprendizagem desenvolvidos através da aplicação 
-em problemas reais e da retroalimentação dos alunos.
+- Serão elaborados e apresentados relatórios semestrais sobre os resultados 
+parciais obtidos.
+
+- A eficácia dos materiais de aprendizagem desenvolvidos será avaliada 
+pela realização de pesquisas com os usuários atuais e potenciais.
 
 
 ## Resultados Esperados
+
+1. Submissão de pelo menos dois artigo científicos para publicação em 
+revistas científicas indexadas
+
+2. Elaboração de pelo menos tres tutoriais sobre a utilização das linguagens, 
+R, python e sobre o sistema de controle de versão git para o desenvolvimento 
+de pesquisas e produtos reproduzíveis e auditáveis. Esses tutoriais serão 
+contabilizados como produção técnica para o Mestrado Profissional em 
+Administração.
+
+Por fim, é importante destacar que uma co-orientação em andamento no 
+âmbito do Mestrado Profissional em Administração jã obteve resultados 
+promissoares para publicação.  
 
 
 ## Referências
 
 ::: {#refs}
 :::
-
-
